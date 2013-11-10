@@ -1,0 +1,14 @@
+/ flash messages
+#flash_messages
+  = render 'layouts/flash'
+
+/ content
+= yield
+
+.clearfix
+%br
+%br
+
+/ debug info (development only)
+= content_tag(:div, debug(params)) if Rails.env.development?
+

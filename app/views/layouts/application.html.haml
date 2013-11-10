@@ -1,0 +1,27 @@
+!!! 5
+%html{lang: "en"}
+  %head
+    = render 'layouts/head'
+
+  %body
+    #wrap
+      / header
+      = render 'layouts/header'
+
+      / body [and sidebar]
+      .container
+        - if content_for? :title
+          %h1= yield :title
+        - if (content_for? :sidebar)
+          .row
+            .col-sm-3
+              = yield :sidebar if content_for? :sidebar
+              = render 'layouts/sidebar' if signed_in?
+            .col-sm-9
+              = render 'layouts/body'
+        - else
+          = render 'layouts/body'
+
+    / footer
+    = render 'layouts/footer'
+
