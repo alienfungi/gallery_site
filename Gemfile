@@ -33,8 +33,10 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
 gem 'will_paginate'
-gem 'bootstrap-will_paginate', :git => 'git://github.com/yrgoldteeth/bootstrap-will_paginate.git'
-gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
+
+gem 'compass-rails'
+gem 'zurb-foundation'
+gem 'foundation-will_paginate'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
