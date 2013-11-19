@@ -1,13 +1,14 @@
-.contain-to-grid.sticky
-  %nav.top-bar
-    %ul.title-area
-      %li.name
-      %li.toggle-topbar.menu-icon
-        %a{href: '#'}
-          %span
-    %section.top-bar-section
-      %ul.right
-        - header_links.each do |link|
+- unless session[:location_id].nil?
+  .contain-to-grid.sticky
+    %nav.top-bar
+      %ul.title-area
+        %li.name
+        %li.toggle-topbar.menu-icon
+          %a{href: '#'}
+            %span
+      %section.top-bar-section
+        %ul.right
+          - header_links.each do |link|
+            %li.divider
+            %li{class: (current_page?(link[:path]) ? 'active' : '')}= link_to link[:text], link[:path], id: link[:id]
           %li.divider
-          %li{class: (current_page?(link[:path]) ? 'active' : '')}= link_to link[:text], link[:path], id: link[:id]
-        %li.divider

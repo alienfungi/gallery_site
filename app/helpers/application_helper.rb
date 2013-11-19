@@ -30,11 +30,11 @@ module ApplicationHelper
 
   def header_links
     [
-      header_hash("Home", root_path, 'home'),
-      header_hash("Gallery", "#", 'gallery'),
-      header_hash("Artist Shows", shows_path, 'shows'),
-      header_hash("About Us", about_path, 'about'),
-      header_hash("Contact Us", contact_path, 'contact')
+      header_hash("Home", location_home_path(session[:location_id]), 'home'),
+      header_hash("Gallery", location_genres_path(session[:location_id]), 'gallery'),
+      header_hash("Artist Shows", location_shows_path(session[:location_id]), 'shows'),
+      header_hash("About Us", location_about_path(session[:location_id]), 'about'),
+      header_hash("Contact Us", location_contact_path(session[:location_id]), 'contact')
     ]
   end
 

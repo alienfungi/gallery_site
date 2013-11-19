@@ -1,4 +1,4 @@
-class PicsController < ApplicationController
+class CategoriesController < ApplicationController
 
   def create
   end
@@ -20,7 +20,7 @@ class PicsController < ApplicationController
 
 private
 
-  def pic_params
+  def category_params
   end
 
 end
