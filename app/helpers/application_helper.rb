@@ -29,9 +29,13 @@ module ApplicationHelper
   end
 
   def header_links
-    {
-      home: header_hash("Home", root_path, 'home')
-    }
+    [
+      header_hash("Home", root_path, 'home'),
+      header_hash("Gallery", "#", 'gallery'),
+      header_hash("Artist Shows", shows_path, 'shows'),
+      header_hash("About Us", about_path, 'about'),
+      header_hash("Contact Us", contact_path, 'contact')
+    ]
   end
 
 private

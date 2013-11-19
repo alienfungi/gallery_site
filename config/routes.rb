@@ -3,7 +3,12 @@ Rails4Template::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'static_pages#home'
+
+  get 'home' => 'static_pages#home'
+  get 'shows' => 'static_pages#shows'
+  get 'about' => 'static_pages#about'
+  get 'contact' => 'static_pages#contact'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -1,14 +1,13 @@
-%header.navbar.navbar-inverse.navbar-fixed-top
-  .container
-    %button{class: "navbar-toggle", type: "button", data: {target: "#header_collapse", toggle: "collapse"}}
-      %span.icon-bar
-      %span.icon-bar
-      %span.icon-bar
-    .navbar-header
-      = link_to "The Site", root_path, class: "navbar-brand"
-    #header_collapse.collapse.navbar-collapse
-      %ul.nav.navbar-nav
-        - header_links.each do |key, link|
-          = content_tag :li, class: (current_page?(link[:path]) ? 'active' : '') do
-            = link_to raw(link.delete(:text)), link.delete(:path), link
-
+.contain-to-grid.sticky
+  %nav.top-bar
+    %ul.title-area
+      %li.name
+      %li.toggle-topbar.menu-icon
+        %a{href: '#'}
+          %span
+    %section.top-bar-section
+      %ul.right
+        - header_links.each do |link|
+          %li.divider
+          %li{class: (current_page?(link[:path]) ? 'active' : '')}= link_to link[:text], link[:path], id: link[:id]
+        %li.divider
