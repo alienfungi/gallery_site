@@ -34,7 +34,7 @@ gem 'jquery-ui-rails'
 
 gem 'will_paginate'
 
-gem 'compass-rails'
+gem 'compass-rails', '~> 2.0.alpha.0'
 gem 'zurb-foundation'
 gem 'foundation-will_paginate'
 

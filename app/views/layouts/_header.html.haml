@@ -10,3 +10,4 @@
         - header_links.each do |link|
           %li.divider
           %li{class: (current_page?(link[:path]) ? 'active' : '')}= link_to link[:text], link[:path], id: link[:id]
+        %li.divider
