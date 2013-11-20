@@ -9,5 +9,6 @@ private
 
   def set_location
     session[:location_id] = params[:location_id] unless params[:location_id].nil?
+    @location = Location.find_by_name(session[:location_id])
   end
 end

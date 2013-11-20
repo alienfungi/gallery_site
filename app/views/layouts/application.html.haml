@@ -23,12 +23,15 @@
   = csrf_meta_tag
 
 %body
+  #wrap
 
-  = render('layouts/header') unless current_page?(root_path)
+    = render('layouts/header') unless current_page?(root_path)
 
-  %br
+    %br
 
-  .row
-    .small-12.columns
-      = yield
+    .row
+      .small-12.columns
+        = yield
+    #wrap_footer
 
+  = render('layouts/footer') unless current_page?(root_path)

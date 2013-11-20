@@ -13,6 +13,10 @@
  *= require_tree .
  */
 
+@import "compass/reset.scss";
+@import "compass/layout.scss";
+@include sticky-footer(54px, '#wrap', '#wrap_footer', '#footer');
+
 .hrule {
   background-color: #CCC;
   height: 1px;

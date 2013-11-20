@@ -1,0 +1,17 @@
+- creator_link = raw "Site by: #{ link_to 'Zane Woodfin', 'http://www.zanewoodfin.com' }"
+
+#footer
+  .hrule
+    %br
+    .row
+      .large-8.columns
+        = raw @location.copyright
+      .large-4.columns
+        .show-for-large-up
+          .right
+            = creator_link
+        .show-for-small
+          %br
+          = creator_link
+          %br
+          %br
