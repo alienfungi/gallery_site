@@ -13,6 +13,11 @@ class LocationsController < ApplicationController
   end
 
   def show
+    if Location.where(name: params[:id]).count == 1
+      redirect_to location_home_path(params[:id])
+    else
+      redirect_to root_path
+    end
   end
 
   def update

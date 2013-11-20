@@ -3,12 +3,18 @@
     %nav.top-bar
       %ul.title-area
         %li.name
-        %li.toggle-topbar.menu-icon
+          %h1
+            = link_to gallery_name, location_home_path(session[:location_id])
+        %li.toggle-topbar.menu-icon>
           %a{href: '#'}
-            %span
+            %span Menu
       %section.top-bar-section
         %ul.right
           - header_links.each do |link|
             %li.divider
             %li{class: (current_page?(link[:path]) ? 'active' : '')}= link_to link[:text], link[:path], id: link[:id]
           %li.divider
+  .row
+    .small-12.columns
+      %h1= page_heading.titleize
+  .hrule

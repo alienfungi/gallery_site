@@ -44,7 +44,6 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-gem 'annotate'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -65,6 +64,7 @@ end
 group :develop do
   gem 'debugger'
   gem 'pry-rails'
+  gem 'annotate'
 end
 
 group :production do

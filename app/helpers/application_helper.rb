@@ -1,22 +1,34 @@
 module ApplicationHelper
-  BASE_TITLE = "Company Site"
 
   def full_title(page_title = '')
-    if page_title.empty?
-      BASE_TITLE
+    page_title = page_heading(page_title)
+    base_title = gallery_name
+    if page_title.blank?
+      base_title
     else
-      "#{BASE_TITLE} | #{page_title}"
+      "#{base_title} | #{page_title}"
+    end
+  end
+
+  def page_heading(page_title = '')
+    page_title.blank? ? request.fullpath.split('/').last : page_title
+  end
+
+  def gallery_name
+    case session[:location_id]
+    when 'key_west' then 'James Coleman Gallery Key West'
+    when 'st_augustine' then 'James Coleman Signature Gallery'
+    else 'Art Gallery'
     end
   end
 
   def flash_class(type)
-    "alert alert-" + case type
+    "alert-box " + case type
       when :success then "success"
-      when :notice then "info"
-      when :alert then "warning"
-      when :error then "danger"
+      when :notice then ""
+      when :alert, :error then "alert"
       else "invalid-type"
-    end
+      end
   end
 
   def format_time(time)
@@ -31,7 +43,7 @@ module ApplicationHelper
   def header_links
     [
       header_hash("Home", location_home_path(session[:location_id]), 'home'),
-      header_hash("Gallery", location_genres_path(session[:location_id]), 'gallery'),
+      header_hash("Gallery", location_gallery_path(session[:location_id]), 'gallery'),
       header_hash("Artist Shows", location_shows_path(session[:location_id]), 'shows'),
       header_hash("About Us", location_about_path(session[:location_id]), 'about'),
       header_hash("Contact Us", location_contact_path(session[:location_id]), 'contact')

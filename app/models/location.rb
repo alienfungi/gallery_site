@@ -9,7 +9,10 @@
 #
 
 class Location < ActiveRecord::Base
-  validates_uniqueness_of :name, case_sensitive: false
+  validates(:name,
+            uniqueness: {case_sensitive: false},
+            format: { with: /\A[a-z0-9_]+\z/ }
+           )
 
   def to_param
     name

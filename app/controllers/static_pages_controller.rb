@@ -10,6 +10,7 @@ class StaticPagesController < ApplicationController
   end
 
   def home
+    @location = Location.find_by_name(session[:location_id])
   end
 
   def shows

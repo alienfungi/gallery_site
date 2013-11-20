@@ -2,16 +2,17 @@ Rails4Template::Application.routes.draw do
 
   root 'static_pages#index'
 
-  resources :locations do
+  resources :locations, path: '' do
 
     get 'home' => 'static_pages#home'
+    get 'gallery' => 'genres#index'
     get 'shows' => 'static_pages#shows'
     get 'about' => 'static_pages#about'
     get 'contact' => 'static_pages#contact'
 
-    resources :genres do
-      resources :artists do
-        resources :categories do
+    resources :genres, path: 'gallery' do
+      resources :artists, path: '' do
+        resources :categories, path: '' do
           resources :pics
         end
       end
