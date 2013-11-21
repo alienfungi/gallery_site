@@ -6,6 +6,13 @@
 #  name       :string(255)
 #  created_at :datetime
 #  updated_at :datetime
+#  about      :text             default("")
+#  hours      :text             default("")
+#  contact    :text             default("")
+#  home       :text             default("")
+#  shows      :text             default("")
+#  gallery    :text             default("")
+#  copyright  :string(255)      default("")
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html

@@ -12,9 +12,7 @@ Rails4Template::Application.routes.draw do
 
     resources :genres, path: 'gallery' do
       resources :artists, path: '' do
-        resources :categories, path: '' do
-          resources :pics
-        end
+        resources :pics
       end
     end
   end

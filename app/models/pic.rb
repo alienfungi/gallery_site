@@ -4,29 +4,30 @@
 #
 #  id         :integer          not null, primary key
 #  image      :string(255)
-#  caption    :string(255)
+#  artist_id  :integer
 #  created_at :datetime
 #  updated_at :datetime
 #
 
 class Pic < ActiveRecord::Base
-  #mount_uploader :image, ImageUploader
+  mount_uploader :image, ImageUploader
 
   belongs_to :artist
 
   validates_presence_of :image
 
-  before_destroy :remember_id
+  before_destroy :remember_ids
   after_destroy :remove_id_directory
 
 private
 
-  def remember_id
+  def remember_ids
     @id = id
+    @artist_id = artist_id
   end
 
   def remove_id_directory
-    FileUtils.remove_dir("#{Rails.root}/public/uploads/pic/#{@artist.id}/#{@id}")
+    FileUtils.remove_dir("#{Rails.root}/public/uploads/pic/#{@artist_id}/#{@id}")
   end
 
 end
