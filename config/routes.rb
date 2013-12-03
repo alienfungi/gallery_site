@@ -2,6 +2,7 @@ Rails4Template::Application.routes.draw do
 
   root 'static_pages#index'
 
+  put 'genres/reorder' => 'genres#reorder', defaults: { format: 'js' }
   resources :locations, path: '' do
 
     get 'home' => 'static_pages#home'

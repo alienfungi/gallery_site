@@ -1,0 +1,3 @@
+= simple_form_for @genre, url: location_genre_path(location_id: @location, id: @genre) do |f|
+  = render 'fields', f: f
+  = f.submit 'Update Genre', class: 'button'

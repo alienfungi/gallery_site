@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131121081914) do
+ActiveRecord::Schema.define(version: 20131203060913) do
 
   create_table "artist_locations", force: true do |t|
     t.integer  "location_id"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20131121081914) do
     t.text     "description", default: ""
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "position",    default: 0
   end
 
   create_table "locations", force: true do |t|

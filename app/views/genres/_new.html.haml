@@ -1,4 +1,3 @@
 = simple_form_for genre, url: location_genres_path(@location) do |f|
-  = f.input :name
-  = f.input :description, as: :text
+  = render 'fields', f: f
   = f.submit 'Create Genre', class: 'button'

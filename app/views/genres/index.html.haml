@@ -1,5 +1,24 @@
 #new_genre
   = link_to 'New Genre', new_location_genre_path(@location)
 
-%ul.small-block-grid-2.large-block-grid-4
+%ul#sortable.ui-sortable.small-block-grid-2.large-block-grid-4
   = render @genres
+
+:coffee
+  jQuery ->
+    $('#sortable').sortable
+      cursor: 'move'
+      forcePlaceholderSize: true
+      stop: ->
+        data = {}
+        $('#sortable li').each (index, element)->
+          data[$(element).data('id')] = index
+
+        console.log data
+
+        $.ajax
+          data:
+            new_position: data
+          type: 'PUT'
+          url: '/genres/reorder'
+
