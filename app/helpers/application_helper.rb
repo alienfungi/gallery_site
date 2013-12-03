@@ -11,7 +11,9 @@ module ApplicationHelper
   end
 
   def page_heading(page_title = '')
-    page_title.blank? ? request.fullpath.split('/').last : page_title
+    default = request.fullpath.split('/').last
+    default = default.split('?').first unless default.nil?
+    page_title.blank? ? default : page_title
   end
 
   def gallery_name

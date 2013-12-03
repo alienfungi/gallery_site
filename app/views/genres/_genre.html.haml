@@ -1,0 +1,5 @@
+%li
+  = link_to location_genre_path(@location, genre), class: 'th' do
+    %img{src: '/assets/default.png'}
+  %br
+  = link_to genre.name, location_genre_path(@location, genre)

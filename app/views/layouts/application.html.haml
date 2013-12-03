@@ -31,7 +31,11 @@
 
     .row
       .small-12.columns
+        / body
         = yield
+
+        / debug info (development only)
+        = content_tag(:div, debug(params), class: 'panel') if Rails.env.development?
     #wrap_footer
 
   = render('layouts/footer') unless current_page?(root_path)

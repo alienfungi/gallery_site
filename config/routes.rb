@@ -10,8 +10,8 @@ Rails4Template::Application.routes.draw do
     get 'about' => 'static_pages#about'
     get 'contact' => 'static_pages#contact'
 
-    resources :genres, path: 'gallery' do
-      resources :artists, path: '' do
+    resources :genres do
+      resources :artists do
         resources :pics
       end
     end
