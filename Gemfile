@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'rb-readline', '~> 0.4.2'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
@@ -85,5 +87,4 @@ end
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
-# Use unicorn as the app server
 ruby '2.0.0'

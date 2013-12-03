@@ -4,6 +4,11 @@ class LocationsController < ApplicationController
   end
 
   def edit
+    @field = params[:field]
+    respond_to do |format|
+      format.js do
+      end
+    end
   end
 
   def index
@@ -21,11 +26,12 @@ class LocationsController < ApplicationController
   end
 
   def update
-  end
-
-private
-
-  def location_params
+    @field = params[:field]
+    @location.update_attributes(@field => params[:location][@field])
+    respond_to do |format|
+      format.js do
+      end
+    end
   end
 
 end

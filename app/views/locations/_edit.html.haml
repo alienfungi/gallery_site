@@ -1,0 +1,4 @@
+= form_for @location, url: location_path(id: @location, field: field), remote: true do |f|
+  = f.text_area field, class: 'tinymce'
+  = f.submit "Update", class: 'button'
+= tinymce

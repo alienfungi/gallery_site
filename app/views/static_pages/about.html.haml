@@ -1,0 +1,16 @@
+.row
+  .large-9.columns
+    #about_field
+      = link_to 'Edit', edit_location_path(id: @location, field: :about), remote: true
+      = raw @location.about
+
+  .large-3.columns
+    %h5 Our Hours
+    #hours_field
+      = link_to 'Edit', edit_location_path(id: @location, field: :hours), remote: true
+      = raw @location.hours
+
+    %h5 Contact Info
+    #contact_field
+      = link_to 'Edit', edit_location_path(id: @location, field: :contact), remote: true
+      = raw @location.contact
