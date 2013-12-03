@@ -1,0 +1,14 @@
+= content_tag :li, title: 'Click and drag to sort artists.', class: "ui-state-default", :'data-id' => artist.id do
+  %h4= artist.name
+  = link_to location_artist_path(@location, artist), class: 'th' do
+    = image_tag 'default.gif'
+  %ul.button-group.right
+    %li
+      = link_to 'edit', edit_location_artist_path(@location, artist), class: 'button small secondary'
+    %li
+      = link_to 'remove', location_artist_path(@location, artist),
+        class: 'button small secondary',
+        method: :delete,
+        confirm: "Are you sure you wish to remove \"#{artist.name}\" from this site?\n(The artist and his art will not actually be deleted; they must be deleted from their respective pages.)"
+
+

@@ -2,19 +2,17 @@ Rails4Template::Application.routes.draw do
 
   root 'static_pages#index'
 
-  put 'genres/reorder' => 'genres#reorder', defaults: { format: 'js' }
+  put 'artists/reorder' => 'artists#reorder', defaults: { format: 'js' }
   resources :locations, path: '' do
 
     get 'home' => 'static_pages#home'
-    get 'gallery' => 'genres#index'
+    get 'gallery' => 'artists#index'
     get 'shows' => 'static_pages#shows'
     get 'about' => 'static_pages#about'
     get 'contact' => 'static_pages#contact'
 
-    resources :genres do
-      resources :artists do
-        resources :pics
-      end
+    resources :artists do
+      resources :pics
     end
   end
 

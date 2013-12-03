@@ -1,0 +1,21 @@
+= link_to 'New Artist', new_location_artist_path(@location)
+
+%ul#sortable.ui-sortable.small-block-grid-2.large-block-grid-4
+  = render @artists
+
+:coffee
+  jQuery ->
+    $('#sortable').sortable
+      cursor: 'move'
+      forcePlaceholderSize: true
+      stop: ->
+        data = {}
+        $('#sortable li').each (index, element)->
+          data[$(element).data('id')] = index
+
+        $.ajax
+          data:
+            new_position: data
+          type: 'PUT'
+          url: '/artists/reorder'
+

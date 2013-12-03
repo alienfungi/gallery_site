@@ -1,0 +1,5 @@
+- provide :title, 'Edit Artist'
+
+= simple_form_for @artist, url: location_artist_path(@location, id: @artist) do |f|
+  = render 'fields', f: f
+  = f.submit 'Update Artist', class: 'button'

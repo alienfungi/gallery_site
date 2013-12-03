@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131203060913) do
+ActiveRecord::Schema.define(version: 20131203230412) do
 
   create_table "artist_locations", force: true do |t|
     t.integer  "location_id"
@@ -24,18 +24,9 @@ ActiveRecord::Schema.define(version: 20131203060913) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "genre_id"
     t.text     "bio",              default: ""
     t.integer  "self_portrait_id"
-  end
-
-  create_table "genres", force: true do |t|
-    t.integer  "location_id"
-    t.string   "name"
-    t.text     "description", default: ""
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "position",    default: 0
+    t.integer  "position",         default: 0
   end
 
   create_table "locations", force: true do |t|

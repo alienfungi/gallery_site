@@ -1,5 +1,4 @@
-#new_genre
-  = link_to 'New Genre', new_location_genre_path(@location)
+= link_to 'New Genre', new_location_genre_path(@location)
 
 %ul#sortable.ui-sortable.small-block-grid-2.large-block-grid-4
   = render @genres
@@ -13,8 +12,6 @@
         data = {}
         $('#sortable li').each (index, element)->
           data[$(element).data('id')] = index
-
-        console.log data
 
         $.ajax
           data:

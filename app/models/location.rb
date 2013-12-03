@@ -18,7 +18,6 @@
 class Location < ActiveRecord::Base
   has_many :artist_locations
   has_many :artists, through: :artist_locations
-  has_many :genres
 
   validates(:name,
             uniqueness: {case_sensitive: false},
