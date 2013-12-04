@@ -1,0 +1,12 @@
+name:
+= @contact_message.name
+
+email:
+= @contact_message.email
+
+- unless @contact_message.phone.blank?
+  phone:
+  = @contact_message.phone
+
+comment:
+= @contact_message.message

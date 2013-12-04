@@ -1,0 +1,23 @@
+!!! 5
+%html{lang: "en"}
+  %head
+    %style{type: "text/css"}
+      :CSS
+        td, th {
+          padding: 10px;
+        }
+  %body
+    %table{border: 1}
+      %tr
+        %th name
+        %td= h @contact_message.name
+      %tr
+        %th email
+        %td= h @contact_message.email
+      - unless @contact_message.phone.blank?
+        %tr
+          %th phone
+          %td= h @contact_message.phone
+      %tr
+        %th comment
+        %td= h @contact_message.message

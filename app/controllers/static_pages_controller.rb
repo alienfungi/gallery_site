@@ -7,6 +7,7 @@ class StaticPagesController < ApplicationController
   end
 
   def contact
+    @contact_message = ContactMessage.new
   end
 
   def home

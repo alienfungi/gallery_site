@@ -1,0 +1,12 @@
+- provide :title, 'Contact Us'
+
+= simple_form_for @contact_message, url: location_contact_messages_path(@location) do |f|
+  = f.input :name, input_html: { autofocus: true }
+
+  = f.input :email, as: :email
+
+  = f.input :phone, as: :tel
+
+  = f.input :message, as: :text, input_html: { rows: 7 }
+
+  = f.submit "Submit", class: "button"

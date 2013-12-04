@@ -9,7 +9,9 @@ Rails4Template::Application.routes.draw do
     get 'gallery' => 'artists#index'
     get 'shows' => 'static_pages#shows'
     get 'about' => 'static_pages#about'
-    get 'contact' => 'static_pages#contact'
+    get 'contact' => 'contact_messages#new'
+
+    resources :contact_messages
 
     resources :artists do
       resources :pics
