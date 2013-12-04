@@ -16,6 +16,11 @@ class Pic < ActiveRecord::Base
 
   validates_presence_of :image
 
+  validates :name,
+    presence: true,
+    format: { with: /\A[\(\) \w]+\z/ },
+    uniqueness: { case_sensitive: false }
+
   before_destroy :remember_ids
   after_destroy :remove_id_directory
 

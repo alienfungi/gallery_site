@@ -1,0 +1,8 @@
+= provide :title, @artist.name
+
+= link_to 'New Picture', new_location_artist_pic_path(location_id: @location, artist_id: @artist)
+
+%ul.small-block-grid-2.large-block-grid-4
+  = render @pics
+
+= will_paginate @pics

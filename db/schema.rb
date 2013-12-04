@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131203230412) do
+ActiveRecord::Schema.define(version: 20131204004759) do
 
   create_table "artist_locations", force: true do |t|
     t.integer  "location_id"
@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(version: 20131203230412) do
     t.integer  "artist_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
+    t.text     "description"
   end
 
 end

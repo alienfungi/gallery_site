@@ -1,0 +1,7 @@
+- provide :title, @pic.name
+
+= image_tag @pic.image_url
+
+%br
+
+= h(@pic.description) unless @pic.description.blank?

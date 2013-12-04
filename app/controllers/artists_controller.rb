@@ -1,5 +1,5 @@
 class ArtistsController < ApplicationController
-  before_action :set_artist, only: [:edit, :show, :update]
+  before_action :set_artist, only: [:destroy, :edit, :show, :update]
 
   def create
     @artist = Artist.new(artist_params)
@@ -10,6 +10,12 @@ class ArtistsController < ApplicationController
     else
       redirect_to :back
     end
+  end
+
+  def destroy
+    @artist_location = ArtistLocation.where(artist_id: @artist, location_id: @location)
+    @artist_location.destroy_all
+    redirect_to location_artists_path(@location)
   end
 
   def edit
