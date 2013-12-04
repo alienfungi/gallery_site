@@ -1,0 +1,12 @@
+- provide :title, "Message"
+
+%h3 Date Sent
+%p= format_time @contact_message.created_at
+%h3 Name
+%p= @contact_message.name
+%h3 Email
+%p= @contact_message.email
+%h3 Phone
+%p= @contact_message.phone.presence || 'not provided'
+%h3 Message
+%p= h @contact_message.message

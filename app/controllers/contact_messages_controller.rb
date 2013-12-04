@@ -1,8 +1,5 @@
 class ContactMessagesController < ApplicationController
-
-  def new
-    @contact_message = ContactMessage.new
-  end
+  before_action :set_contact_message, only: [:show]
 
   def create
     @contact_message = ContactMessage.new(contact_message_params)
@@ -23,10 +20,25 @@ class ContactMessagesController < ApplicationController
     redirect_to :back, flash: notification
   end
 
+  def index
+    @contact_messages = ContactMessage.order('created_at DESC').paginate(page: params[:page])
+  end
+
+  def new
+    @contact_message = ContactMessage.new
+  end
+
+  def show
+  end
+
 private
 
   def contact_message_params
     params.require(:contact_message).permit(:name, :email, :phone, :message)
+  end
+
+  def set_contact_message
+    @contact_message = ContactMessage.find(params[:id])
   end
 
 end

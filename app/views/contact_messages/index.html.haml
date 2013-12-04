@@ -1,0 +1,13 @@
+- provide :title, 'Contact Messages'
+
+%table
+  %thead
+    %th Date
+    %th Sender
+    %th.hide-for-small Email
+    %th.hide-for-small Phone
+    %th Message
+  %tbody
+    = render @contact_messages
+
+= foundation_paginate @contact_messages

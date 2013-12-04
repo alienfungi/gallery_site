@@ -13,7 +13,7 @@
  *= require_tree .
  */
 
-@import "compass/reset.scss";
+//@import "compass/reset.scss";
 @import "compass/layout.scss";
 @include sticky-footer(54px, '#wrap', '#wrap_footer', '#footer');
 
@@ -22,3 +22,8 @@
   height: 1px;
   width: 100%;
 }
+
+table {
+  width: 100%;
+}
+

@@ -1,0 +1,9 @@
+%tr
+  %td= format_time contact_message.created_at
+  %td
+    %span.hide-for-small= contact_message.name
+    %span.show-for-small= truncate contact_message.name, length: 10
+  %td.hide-for-small= contact_message.email
+  %td.hide-for-small= contact_message.try(:phone) || 'not provided'
+  %td= link_to truncate(contact_message.message, length: 20), location_contact_message_path(location_id: @location, id: contact_message)
+
