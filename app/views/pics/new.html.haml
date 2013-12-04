@@ -1,5 +1,6 @@
-- provide :title, "New #{@artist.name} Picture"
+- provide :title, "New #{@artist.name} Image"
 
 = simple_form_for @pic, url: location_artist_pics_path(location_id: @location, artist_id: @artist) do |f|
   = render 'fields', f: f
+  = f.input :image, as: :file
   = f.submit 'Add New Image', class: 'button'

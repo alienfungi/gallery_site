@@ -1,0 +1,5 @@
+- provide :title, 'Edit Image'
+
+= simple_form_for @pic, url: location_artist_pic_path(location_id: @location, artist_id: @pic.artist, id: @pic) do |f|
+  = render 'fields', f: f
+  = f.submit 'Update Image', class: 'button'

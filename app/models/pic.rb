@@ -2,11 +2,13 @@
 #
 # Table name: pics
 #
-#  id         :integer          not null, primary key
-#  image      :string(255)
-#  artist_id  :integer
-#  created_at :datetime
-#  updated_at :datetime
+#  id          :integer          not null, primary key
+#  image       :string(255)
+#  artist_id   :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#  name        :string(255)
+#  description :text
 #
 
 class Pic < ActiveRecord::Base
